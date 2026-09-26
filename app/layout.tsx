@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Poppins } from 'next/font/google'
+import { TawkChat } from '@/components/tawk-chat'
 import './globals.css'
 
 const poppins = Poppins({
@@ -50,6 +51,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} antialiased`}>
         {children}
+        <TawkChat />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
